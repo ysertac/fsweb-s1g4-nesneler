@@ -191,9 +191,17 @@ console.log(SonDegerlendirmeyiAl(degerlendirmeler));
 	]
 */
 
-function PuanaGoreDegerlendirmeAl(/* Kodlar buraya */) {
-  /* Kodlar buraya */
+function PuanaGoreDegerlendirmeAl(x, y) {
+  const puanaGoreDegerlendirmeler = [];
+  for (let key in x) {
+    if (y == Math.floor(x[key].puan)) {
+      puanaGoreDegerlendirmeler.push(x[key]);
+    }
+  }
+  return puanaGoreDegerlendirmeler;
 }
+
+console.log(PuanaGoreDegerlendirmeAl(degerlendirmeler, 4));
 
 /*  BONUS 2:    
 	UzunDegerlendirmeleriAl fonksiyonuna aşağıdakileri uygulayın:
@@ -202,9 +210,18 @@ function PuanaGoreDegerlendirmeAl(/* Kodlar buraya */) {
 	
 */
 
-function UzunDegerlendirmeleriAl(/* Kodlar buraya */) {
-  /* Kodlar buraya */
+function UzunDegerlendirmeleriAl(x) {
+  const uzunGeriBildirimler = [];
+  for (let key in x) {
+    let z = x[key].geribildirim.split(" ");
+    if (z.length > 15) {
+      uzunGeriBildirimler.push(x[key]);
+    }
+  }
+  return uzunGeriBildirimler;
 }
+
+console.log(UzunDegerlendirmeleriAl(degerlendirmeler));
 
 /*  BONUS 3:  
 	Bu ek görevde degerlendirmeler dizisi kullanılmayacak!  Bu görevde kendi nesnenizi yaratmanız gerekmektedir.
